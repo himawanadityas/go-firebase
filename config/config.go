@@ -9,9 +9,9 @@ import (
 )
 
 func Connection() (context.Context, *firebase.App) {
-	option := option.WithCredentialsFile("go-firebase/firebaseKey.json")
+	option := option.WithCredentialsFile("firebaseKey.json")
 	ctx := context.Background()
-	conf := &firebase.Config{DatabaseURL:"https://data-118cf.firebaseio.com"}
+	conf := &firebase.Config{ProjectID: "data-118cf"}
 	apps, err := firebase.NewApp(ctx, conf, option)
 	if err != nil {
 		fmt.Println(err)
